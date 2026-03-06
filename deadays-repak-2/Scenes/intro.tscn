@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cf6o73wshtqv7"]
+
+[ext_resource type="Script" uid="uid://cjno66rba3xlg" path="res://Scripts/intro.gd" id="1_alxvg"]
+[ext_resource type="Texture2D" uid="uid://ke7fqueeewvp" path="res://Textures/oknogmdv_introduction.png" id="2_geirw"]
+[ext_resource type="AudioStream" uid="uid://blc4qv28kxq0k" path="res://SFX/game_startup.mp3" id="3_hwjxs"]
+[ext_resource type="FontFile" uid="uid://di748iomvi46r" path="res://Faithful.ttf" id="4_3bmuq"]
+[ext_resource type="Texture2D" uid="uid://buuc4oecm85uh" path="res://FrameDD/Textures/intro_element_1_1.png" id="4_hwjxs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsiac"]
+font = ExtResource("4_3bmuq")
+font_size = 131
+
+[sub_resource type="Animation" id="Animation_rsiac"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3bmuq"]
+resource_name = "intro"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.53333, 4.99751, 7),
+"transitions": PackedFloat32Array(0.450625, 0.450625, 0.450625, 0.450625),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nn7w8"]
+_data = {
+&"RESET": SubResource("Animation_rsiac"),
+&"intro": SubResource("Animation_3bmuq")
+}
+
+[node name="Intro" type="Control" unique_id=556723977]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_alxvg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1898361675]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=785210261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_geirw")
+
+[node name="IntroElement11" type="Sprite2D" parent="ColorRect/TextureRect" unique_id=2104468524]
+position = Vector2(102, 538)
+texture = ExtResource("4_hwjxs")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect" unique_id=1879543857]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -70.000015
+offset_top = 601.0
+offset_right = -70.0
+offset_bottom = 755.0
+grow_horizontal = 2
+scale = Vector2(0.315, 0.315)
+text = "1.1.3"
+label_settings = SubResource("LabelSettings_rsiac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameStartup" type="AudioStreamPlayer" parent="." unique_id=2067235208]
+stream = ExtResource("3_hwjxs")
+volume_db = -2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1006004890]
+libraries/ = SubResource("AnimationLibrary_nn7w8")
+
+[node name="Timer" type="Timer" parent="." unique_id=1508677220]
+wait_time = 7.2
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

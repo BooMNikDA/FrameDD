@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cijgr05p5b3yq"]
+
+[ext_resource type="Script" uid="uid://ycdummmrhunq" path="res://FrameDD/Scripts/map_card.gd" id="1_keye2"]
+
+[node name="MapCard" type="PanelContainer" unique_id=2077525387]
+offset_right = 193.0
+offset_bottom = 331.0
+script = ExtResource("1_keye2")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1194827721]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=852905344]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=457140546]
+layout_mode = 2
+
+[node name="MapName" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1720442247]
+layout_mode = 2
+
+[node name="AuthorLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=891366666]
+layout_mode = 2

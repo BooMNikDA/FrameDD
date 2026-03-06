@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cf3ueyid45cua"]
+
+[ext_resource type="PackedScene" uid="uid://crgupe1kpmqga" path="res://Scenes/world.tscn" id="1_1h05d"]
+[ext_resource type="Script" uid="uid://bp3ir3rsaupo6" path="res://FrameDD/Scripts/soundtrack.gd" id="2_qacqj"]
+[ext_resource type="PackedScene" uid="uid://bw17ys2lk5acy" path="res://FrameDD/Models/banner_2.tscn" id="2_wux6d"]
+
+[node name="World" unique_id=673843385 instance=ExtResource("1_1h05d")]
+
+[node name="BigHouse2" parent="NavigationRegion3D/Environment" index="5"]
+transform = Transform3D(7.21238e-06, 0, 55.0001, 0, 54.99999, 0, -54.9999, 0, 7.21238e-06, -578.578, -0.70706177, 150.008)
+
+[node name="CornerHouse" parent="NavigationRegion3D/Environment" index="6"]
+transform = Transform3D(49.9999, 0, 0, 0, 49.999985, 0, 0, 0, 50.0001, -275.318, -0.62387085, 194.594)
+
+[node name="KitletstBanner" parent="NavigationRegion3D/Environment" index="50"]
+transform = Transform3D(12.9904, 0, 7.5, 0, 14.999999, 0, -7.4999995, 0, 12.990399, -14.364304, -165.53406, -185.82)
+
+[node name="Cylinder" parent="Player/CameraRoot/Camera3D/WeaponManager/Weapons/Knife/Graphics/Bones/Skeleton3D" index="0" unique_id=1611575057]
+transform = Transform3D(-0.023454811, -0.0540249, -0.18928967, 0.17380546, 0.08381229, -0.045457046, 0.09241553, -0.17133678, 0.037449576, 0.6901377, 1.4444635, 0.3769179)
+
+[node name="Cube" parent="Player/CameraRoot/Camera3D/WeaponManager/Weapons/Makarov/Graphics/Bones/Skeleton3D" index="0" unique_id=1059312178]
+transform = Transform3D(-0.029373622, 0.011760526, -0.001565347, 0.0117198685, 0.029412622, 0.0010553563, 0.0018451357, 0.00039944117, -0.03162289, 0.67868954, 1.2059705, 0.28207925)
+
+[node name="Cube" parent="Player/CameraRoot/Camera3D/WeaponManager/Weapons/M4A1/Graphics/Bones/Skeleton3D" index="0" unique_id=1326753709]
+transform = Transform3D(-0.019545838, 1.4319085e-08, -0.00058868295, -1.5541445e-08, -0.019554596, -9.080395e-09, 0.0005886806, 9.080395e-09, -0.019545838, 0.77168226, 1.5727115, 0.21541518)
+
+[node name="Cylinder_002" parent="Player/CameraRoot/Camera3D/WeaponManager/Weapons/Shotgun/Graphics/Bones/Skeleton3D" index="0" unique_id=2076196701]
+transform = Transform3D(-0.14607534, 0.21350509, 0.017025977, -0.21418367, -0.1456125, -0.011612102, -1.9744039e-07, -0.020608746, 0.2584336, 0.7079413, 1.2122768, 0.19761969)
+
+[node name="StatsDisplay" parent="Player/CameraRoot/Camera3D/PlayerUILayer" index="1" unique_id=173190594]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Soundtrack" parent="." index="3"]
+parameters/looping = true
+script = ExtResource("2_qacqj")
+
+[node name="Banner_2" parent="." index="108" unique_id=377776688 instance=ExtResource("2_wux6d")]
+transform = Transform3D(12.990381, 0, 7.5, 0, 15, 0, -7.5, 0, 12.990381, -78.33887, -192.36514, 435.53824)
+
+[editable path="Player"]
+[editable path="Player/CameraRoot/Camera3D/WeaponManager/Weapons/Knife/BulletEmitter/HitScanBulletEmitter"]
+[editable path="Player/CameraRoot/Camera3D/PlayerUILayer/SettingsMenu"]
+[editable path="Player/HealthManager"]

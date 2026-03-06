@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://1s0tnhvmdcjo"]
+
+[ext_resource type="Script" uid="uid://bquks06u6i8xc" path="res://Scripts/world.gd" id="1_m8wdi"]
+[ext_resource type="PackedScene" uid="uid://crgupe1kpmqga" path="res://Scenes/world.tscn" id="2_ew030"]
+[ext_resource type="Script" uid="uid://bvh8camd8p1km" path="res://Maps/TestMap/Scripts/autoexec.gd" id="3_uvl6k"]
+[ext_resource type="Texture2D" uid="uid://bs2befriieyqr" path="res://icon.svg" id="4_cbac4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yh3u"]
+albedo_texture = ExtResource("4_cbac4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_jyywp"]
+
+[node name="Map" type="Node3D" unique_id=1820551539]
+script = ExtResource("1_m8wdi")
+
+[node name="World" parent="." unique_id=673843385 instance=ExtResource("2_ew030")]
+
+[node name="Commands" type="Node" parent="." unique_id=170182371]
+script = ExtResource("3_uvl6k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1678168698]
+transform = Transform3D(35.59, 0, 0, 0, 35.59, 0, 0, 0, 35.59, 45.654324, -168.32253, 618.5805)
+material_override = SubResource("StandardMaterial3D_1yh3u")
+mesh = SubResource("BoxMesh_jyywp")
