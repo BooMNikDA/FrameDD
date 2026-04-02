@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cnhlwc6f7fy7s"]
+
+[ext_resource type="Texture2D" uid="uid://buuc4oecm85uh" path="res://FrameDD/Textures/intro_element_1_1.png" id="1_t2d47"]
+[ext_resource type="FontFile" uid="uid://di748iomvi46r" path="res://Faithful.ttf" id="2_g2vrh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnttv"]
+font = ExtResource("2_g2vrh")
+font_size = 131
+
+[node name="FDD_Intro" type="Control" unique_id=1841285658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IntroElement11" type="Sprite2D" parent="." unique_id=1957689576]
+position = Vector2(121, 564)
+texture = ExtResource("1_t2d47")
+
+[node name="Version" type="Label" parent="." unique_id=1423103530]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 209.0
+offset_top = 634.0
+offset_right = 209.0
+offset_bottom = 788.0
+grow_horizontal = 2
+scale = Vector2(0.34, 0.34)
+text = "1.1.4"
+label_settings = SubResource("LabelSettings_qnttv")
+horizontal_alignment = 1
+vertical_alignment = 1

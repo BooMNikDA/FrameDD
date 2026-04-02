@@ -1,0 +1,5 @@
+MAPS_TEXT, Maps, Карты
+MODE_TEXT, Mods, Моды
+BACK_TEXT, Back, Назад
+ACTIVATION_MOD, Activation mod, Активировать мод
+PLAY_TEXT, Play, Играть
